@@ -33,7 +33,7 @@ Vietnamese Novels (https://gacsach.com/tac-gia/nguyen-nhat-anh.html)
 Embeddings: Word2vec vectors for vietnamese (fasttext) ( You can download cc.vi.300.vec at https://fasttext.cc/docs/en/crawl-vectors.html)
 
 # Usage
-All the configurations are put in the train_<model name>_model.py with
+All the configurations are put in the train_[model name]_model.py with
  - train_BiLSTM_Attention_focal_loss_model.py: BiLSTM + Attention model with focal loss
  - train_BiLSTM_CRF_focal_loss_model.py: BiLSTM + CRF model with focal loss
  - train_BiLSTM_focal_loss_model.py: BiLSTM model with focal loss
