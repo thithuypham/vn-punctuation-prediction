@@ -30,7 +30,8 @@ Vietnamese Newspapers (https://baomoi.com/)
 
 Vietnamese Novels (https://gacsach.com/tac-gia/nguyen-nhat-anh.html)
 
-word2vec vectors for vietnamese (fasttext) ( You can download at https://fasttext.cc/docs/en/crawl-vectors.html)
+Word2vec vectors for vietnamese (fasttext) ( You can download cc.vi.300.vec at https://fasttext.cc/docs/en/crawl-vectors.html)
 
-# Ex
+# Usage
+
 
