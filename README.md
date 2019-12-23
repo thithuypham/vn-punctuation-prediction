@@ -1,50 +1,28 @@
-# Interpolation Consistency Training (ICT) for Deep Semi-supervised Learning 
+# Vietnamese Punctuation Prediction Using Deep Neural Networks
+(link paper)
 
-This repo consists Pytorch code for the IJCAI 2019 paper *Intepolation Consistency Training for Semi-supervised Learning* (https://arxiv.org/abs/1903.03825)
+In this paper, we have studied the punctuation prediction problem for the Vietnamese language. We collect two large-scale datasets and conduct extensive experiments with both traditional method (using CRF models) and a deep learning approach. We address the class imbalance problem in this task and show promising results using the focal loss on the Vietnamese Newspapers data.
 
-In this paper, we propose a simple and efficient algorithm for training Deep Neural Networks in the Semi-supervised setting. We use interpolations between the unlabeled data samples as the perturbation directions for Consistency-regularization instead of random perturbations or adversarial perturbations. **Our method outperforms (or is competitive with) other recent state-of-the-art methods on CIFAR10 and SVHN datasets, despite having no significant additional computation cost**. 
-
-<p align="center">
-    <img src="ict_two_moon.png" height="300" width= "800">
-</p>
-
-<p align="center">
-    <img src="ict_procedure.png" height="400" width= "600">
-</p>
-
-
-
-If you find this work useful and use it on your own research, use the following bibtex for our [paper](https://arxiv.org/abs/1903.03825). 
-
-```
-@ARTICLE{2019arXiv190303825V,
-       author = {{Verma}, Vikas and {Lamb}, Alex and {Kannala}, Juho and
-         {Bengio}, Yoshua and {Lopez-Paz}, David},
-        title = "{Interpolation Consistency Training for Semi-Supervised Learning}",
-      journal = {arXiv e-prints},
-     keywords = {Statistics - Machine Learning, Computer Science - Artificial Intelligence, Computer Science - Machine Learning},
-         year = "2019",
-        month = "Mar",
-          eid = {arXiv:1903.03825},
-        pages = {arXiv:1903.03825},
-archivePrefix = {arXiv},
-       eprint = {1903.03825},
- primaryClass = {stat.ML},
-       adsurl = {https://ui.adsabs.harvard.edu/\#abs/2019arXiv190303825V},
-      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
-}
-```
-
-
-### Requirements
+# Requirements
 This code has been tested with  
-python 3.6.8  
-torch 1.0.0  
-torchvision 0.2.1
+python 3.6.8
+tensorflow 1.13.1
+fasttext (https://fasttext.cc/docs/en/crawl-vectors.html)
+
+# Dataset
+
+In this work, we collect over 40,000 articles from the Vietnamese news (https://baomoi.com/) and 86 novels (https://gacsach.com/tac-gia/nguyen-nhat-anh.html) to build two datasets with a total of over 900000 sentences.
 
 ### Data Preprocessing
-
-The precomputed zca files are in data/cifar10/ . You can compute it yourself also by running the script python cifar10_zca.py. This will compute and save the ZCA for CIFAR10 in the folder data/cifar10/ 
+We label each word by its immediately following punctuation, where label O denotes a space. Example:
+```
+Biển tạo ra 1/2 lượng oxy con người hít thở, giúp lưu chuyển nhiệt quanh Trái Đất và hấp thụ một lượng lớn CO2.
+(The ocean produces a half of the amount of oxygen that humans can breathe, and help to circulate heat around the Earth and absorb large amounts of CO2.)
+```
+This paragraph can be labeled as follows:
+```
+biển/O tạo/O ra/O 1/2/O lượng/O oxy/O con/O người/O hít/O thở/Comma giúp/O lưu/O chuyển/O nhiệt/O quanh/O trái đất/O và/O hấp/O thụ/O một/O lượng/O lớn/O co2/Period
+```
 
 
 ### For reproducing results on Cifar10 with 4000 labeled data with CNN13 architechture
