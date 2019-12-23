@@ -30,8 +30,15 @@ Vietnamese Newspapers (https://baomoi.com/)
 
 Vietnamese Novels (https://gacsach.com/tac-gia/nguyen-nhat-anh.html)
 
-Word2vec vectors for vietnamese (fasttext) ( You can download cc.vi.300.vec at https://fasttext.cc/docs/en/crawl-vectors.html)
+Embeddings: Word2vec vectors for vietnamese (fasttext) ( You can download cc.vi.300.vec at https://fasttext.cc/docs/en/crawl-vectors.html)
 
 # Usage
-
-
+All the configurations are put in the train_<model name>_model.py with
+ - train_BiLSTM_Attention_focal_loss_model.py: BiLSTM + Attention model with focal loss
+ - train_BiLSTM_CRF_focal_loss_model.py: BiLSTM + CRF model with focal loss
+ - train_BiLSTM_focal_loss_model.py: BiLSTM model with focal loss
+ - train_BiLSTM_Attention_model.py: BiLSTM + Attention model without focal loss
+ - train_BiLSTM_CRF_model.py: BiLSTM + CRF model without focal loss
+ - train_BiLSTM_model.py: BiLSTM model without focal loss
+ - model.py: model definition with focal loss
+ - model_without_focal_loss.py: model definition without focal loss
